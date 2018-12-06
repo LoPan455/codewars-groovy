@@ -23,16 +23,15 @@ class Printer {
     // count the number of characters in the string (the denominator)
     String totalCharacters = string.length()
 
+    // count of the error characters
     int invalidCharacterCount = 0
-    int validCharacterCount = 0
 
     // The RegEx pattern to match against
-    Pattern validCharacters = ~/([a-m])/
+    def validCharacters = /([a-m])/
 
     // Loop to check each character in the string and see if it matches the valid characters.  For each mismatch, increment the mismatch count
-
     string.each {
-      if(!(it =~/([a-m])/)) {
+      if(!(it =~ validCharacters)) {
         invalidCharacterCount++
       }
     }
