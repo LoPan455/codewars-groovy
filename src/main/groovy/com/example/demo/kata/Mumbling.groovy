@@ -1,10 +1,9 @@
-package com.example.demo.kata;
+package com.example.demo.kata
 
 // This time no story, no theory. The examples below show
 // you how to write function accum:
 //
 // Examples:
-//
 // accum("abcd") -> "A-Bb-Ccc-Dddd"
 // accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
 // accum("cwAt") -> "C-Ww-Aaa-Tttt"
@@ -13,22 +12,16 @@ package com.example.demo.kata;
 
 class Mumbling {
 
-  String accum(String inputString) {
+  String accum(String s) {
 
-    List lettersList = inputString.toList()
-    List outputList = []
+    List lettersList = s.tr('A-Z', 'a-z').toList()
+    List<String> outputList = []
 
     lettersList.eachWithIndex { String entry, int i ->
-      outputList.add(entry.multiply((i + 1)))
+      outputList.add((entry * (i + 1)).replaceFirst(entry, entry.toUpperCase()))
     }
 
-
-
-
-    // This will be the last thing we want to do on the list to separate out each element
-    def outputString = lettersList.join("-")
-
-
+    def outputString = outputList.join("-")
 
     return outputString
   }

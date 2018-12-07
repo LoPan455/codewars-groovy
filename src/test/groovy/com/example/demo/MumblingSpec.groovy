@@ -10,15 +10,14 @@ class MumblingSpec extends Specification {
   def 'accom() returns the expected value'() {
 
     given:
-    def string1 = "abcd"
+    def string = "abcd"
     def string2 = "RqaEzty"
     def string3 = "cwAt"
 
-    when:
-    def result = mumbling.accum(string1)
-
-    then:
-    "A-Bb-Ccc-Dddd" == result
+    expect:
+    "A-Bb-Ccc-Dddd" == mumbling.accum(string)
+    "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy" == mumbling.accum(string2)
+    "C-Ww-Aaa-Tttt" == mumbling.accum(string3)
 
   }
 }
