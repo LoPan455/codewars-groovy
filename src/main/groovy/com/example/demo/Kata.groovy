@@ -183,7 +183,7 @@ class Kata {
    */
   static def timedReading(maxLength, String text) {
 
-    def pattern = /[A-Za-z]{1,4}/
+    def pattern = /\b([A-Za-z]{1,$maxLength})\b/
     def matches = (text =~/$pattern/)
 
     return matches.size()
