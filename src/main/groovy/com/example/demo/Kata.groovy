@@ -241,7 +241,7 @@ class Kata {
 
         boolean result = false
 
-        if (((year % 4) == 0) || ((year % 400) == 0 )) {
+        if ((((year % 4) == 0) && ((year % 100) != 0)) || (((year % 400) == 0 ))) {
             result = true
         }
 
