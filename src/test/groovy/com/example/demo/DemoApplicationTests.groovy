@@ -69,13 +69,8 @@ class DemoApplicationTests {
     assertEquals("ten", kata.wallpaper(4, 3.5, 3));
     assertEquals("sixteen", kata.wallpaper(6.3, 4.5, 3.29));
     assertEquals("sixteen", kata.wallpaper(7.8, 2.9, 3.29));
-  assertEquals("zero", kata.wallpaper(0, 0, 0));
-  assertEquals("zero", kata.wallpaper(0, 0, 1));
-  assertEquals("zero", kata.wallpaper(0, 1, 0));
-  assertEquals("zero", kata.wallpaper(1, 0, 0));
-  assertEquals("zero", kata.wallpaper(0, 0,0.1));
-  assertEquals("zero", kata.wallpaper(0, 0.1, 0));
-  assertEquals("zero", kata.wallpaper(0, 0, 0));
+    assertEquals("zero", kata.wallpaper(0, 0, 0));
+    assertEquals("zero", kata.wallpaper(0, 0, 1));
   }
 
     @Test
@@ -101,6 +96,13 @@ class DemoApplicationTests {
         assert Kata.timedReading(1, "Oh!") == 0
         assert Kata.timedReading(5, "Now and then, however, he is horribly thoughtless, and seems to take a real delight in giving me pain.") == 14
     }
+
+   @Test
+   void "Hungarian Vowel Harmony Tests"() {
+       assert Kata.dative("ablak") == "ablaknak"
+       assert Kata.dative("szék") == "széknek"
+       assert Kata.dative("otthon") == "otthonnak"
+   }
 
 }
 

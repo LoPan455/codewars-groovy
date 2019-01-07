@@ -248,6 +248,24 @@ class Kata {
         return result
     }
 
+    /**
+     *
+     * @param w
+     * @return
+     */
+    static def dative(String w) {
+        List<String> frontVowels = ["e", "é", "i", "í", "ö", "ő", "ü", "ű"]
+        List<String> backVowels = ["a", "á", "o", "ó", "u", "ú"]
+        String frontVowelSuffix = "nek"
+        String backVowelSuffix = "nak"
+
+        def lastVowel = w.reverse().charAt(1)
+
+        return lastVowel
+
+
+    }
+
 }
 
 
