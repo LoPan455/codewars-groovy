@@ -261,15 +261,7 @@ class Kata {
         String backVowelSuffix = "nak"
 
         // TODO: need a better way to find the last instance of one of these vowels
-        def lastVowel = w.reverse().charAt(1) as String
-
-        if (frontVowels.find { it == lastVowel}) {
-            w += frontVowelSuffix
-        }
-
-        if (backVowels.find { it == lastVowel}) {
-            w += backVowelSuffix
-        }
+        def lastVowel = w.findLastIndexOf { frontVowels }
 
         return w
 
