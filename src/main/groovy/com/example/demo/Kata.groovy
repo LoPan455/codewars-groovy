@@ -255,24 +255,23 @@ class Kata {
    */
   static def dative(String w) {
 
+    String suffix
     List<String> frontVowels = ["e", "é", "i", "í", "ö", "ő", "ü", "ű"]
     List<String> backVowels = ["a", "á", "o", "ó", "u", "ú"]
-    String frontVowelSuffix = "nek"
-    String backVowelSuffix = "nak"
 
     frontVowels.each {
       if ((w.lastIndexOf(it)) != -1) {
-        w += frontVowelSuffix
+        suffix = "nek"
       }
     }
 
     backVowels.each {
       if ((w.lastIndexOf(it)) != -1) {
-        w += backVowelSuffix
+        suffix = "nak"
       }
     }
 
-    return w
+    return w + suffix
   }
 
 }
